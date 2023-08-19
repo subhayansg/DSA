@@ -13,6 +13,11 @@ public class Main {
         singlyLinkedList.display();
         System.out.println();
 
+        singlyLinkedList.insertUsingRecursion(100, 2);
+        System.out.println("After insert using recursion: ");
+        singlyLinkedList.display();
+        System.out.println();
+
 //        singlyLinkedList.insertLastElement(88);
 //        singlyLinkedList.insertAtAParticularPosition(88, 2);
 //        System.out.println("After insert at particular position: ");
@@ -34,6 +39,6 @@ public class Main {
 //        singlyLinkedList.display();
 //        System.out.println();
 
-        System.out.println(singlyLinkedList.findNodeOfGivenValue(3));
+//        System.out.println(singlyLinkedList.findNodeOfGivenValue(3));
     }
 }

@@ -57,6 +57,21 @@ public class SinglyLinkedList {
         size++;
     }
 
+    // Use recursion to insert a value in a SLL at a given index
+    public void insertUsingRecursion(int value, int index) {
+        head = insertUsingRecursion(value, index, head);
+    }
+
+    private Node insertUsingRecursion(int value, int index, Node node) {
+        if (index == 0) {
+            Node newNode = new Node(value, node);  // node = current node, which becomes the next node for the new node
+            size++;
+            return newNode;
+        }
+        node.nextNode = insertUsingRecursion(value, index - 1, node.nextNode);
+        return node;
+    }
+
     public int deleteFirstElement() {
         int firstElement = head.value;
         head = head.nextNode;
