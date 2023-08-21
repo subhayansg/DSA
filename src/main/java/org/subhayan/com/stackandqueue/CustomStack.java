@@ -2,17 +2,17 @@ package org.subhayan.com.stackandqueue;
 
 import java.util.Arrays;
 
-public class StackCustom {
+public class CustomStack {
     protected int[] stack;
     protected static final int DEFAULT_SIZE = 10;
 
     int top = -1;
 
-    public StackCustom(int size) {
+    public CustomStack(int size) {
         this.stack = new int[size];  // when we pass a size, it should create an integer array of that size
     }
 
-    public StackCustom() {
+    public CustomStack() {
         this(DEFAULT_SIZE);  // if no size provided, create an array of DEFAULT_SIZE
     }
 
@@ -60,7 +60,7 @@ public class StackCustom {
     }
 
     public static void main(String[] args) throws StackException {
-        StackCustom stack = new StackCustom(6);
+        CustomStack stack = new CustomStack(6);
         stack.push(34);
         stack.push(45);
         stack.push(2);

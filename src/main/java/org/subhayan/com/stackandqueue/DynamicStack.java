@@ -1,6 +1,6 @@
 package org.subhayan.com.stackandqueue;
 
-public class DynamicStack extends StackCustom{
+public class DynamicStack extends CustomStack {
     public DynamicStack(int size) {
         super(size);
     }
@@ -20,7 +20,7 @@ public class DynamicStack extends StackCustom{
     }
 
     public static void main(String[] args) throws StackException {
-        StackCustom stack = new DynamicStack(5);
+        CustomStack stack = new DynamicStack(5);
         stack.push(34);
         stack.push(45);
         stack.push(2);
