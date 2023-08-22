@@ -10,7 +10,7 @@ public class DynamicStack extends CustomStack {
     }
 
     @Override
-    public boolean push(int item) throws StackException {
+    public boolean push(int item) throws StackAndQueueException {
         if (this.isFull()) {
             int[] temp = new int[stack.length * 2];
             System.arraycopy(stack, 0, temp, 0, stack.length);
@@ -19,7 +19,7 @@ public class DynamicStack extends CustomStack {
         return super.push(item);
     }
 
-    public static void main(String[] args) throws StackException {
+    public static void main(String[] args) throws StackAndQueueException {
         CustomStack stack = new DynamicStack(5);
         stack.push(34);
         stack.push(45);

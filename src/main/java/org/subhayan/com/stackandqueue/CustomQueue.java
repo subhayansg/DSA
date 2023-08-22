@@ -6,19 +6,19 @@ public class CustomQueue {
 
     int tail = 0;
 
-    public boolean enqueue(int item) throws StackException {  // adding an item at the end of queue is called enqueue
+    public boolean enqueue(int item) throws StackAndQueueException {  // adding an item at the end of queue is called enqueue
         // takes O(1) time
         if (isFull()) {
-            throw new StackException("Queue is full! Cannot enqueue!");
+            throw new StackAndQueueException("Queue is full! Cannot enqueue!");
         }
         queue[tail++] = item;
         return true;
     }
 
-    public int dequeue() throws StackException {  // removing an item from the start is called dequeue
+    public int dequeue() throws StackAndQueueException {  // removing an item from the start is called dequeue
         // this takes O(n) time due to shift
         if (isEmpty()) {
-            throw new StackException("Queue is empty! Cannot dequeue!");
+            throw new StackAndQueueException("Queue is empty! Cannot dequeue!");
         }
         int removedItem = queue[0];
 
@@ -46,9 +46,9 @@ public class CustomQueue {
         return queue.length + 1 == tail;
     }
 
-    public int peek() throws StackException {
+    public int peek() throws StackAndQueueException {
         if (isEmpty()) {
-            throw new StackException("Can't peek when Stack is empty!");
+            throw new StackAndQueueException("Can't peek when Stack is empty!");
         }
         return queue[tail];
     }
@@ -59,7 +59,7 @@ public class CustomQueue {
         }
     }
 
-    public static void main(String[] args) throws StackException {
+    public static void main(String[] args) throws StackAndQueueException {
         CustomQueue queue1 = new CustomQueue(6);
         queue1.enqueue(34);
         queue1.enqueue(45);

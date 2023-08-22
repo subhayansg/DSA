@@ -16,9 +16,9 @@ public class CustomStack {
         this(DEFAULT_SIZE);  // if no size provided, create an array of DEFAULT_SIZE
     }
 
-    public boolean push(int item) throws StackException {
+    public boolean push(int item) throws StackAndQueueException {
         if (isFull()) {
-            throw new StackException("Stack is full!");
+            throw new StackAndQueueException("Stack is full!");
         } else {
             top++;
             stack[top] = item;
@@ -26,9 +26,9 @@ public class CustomStack {
         }
     }
 
-    public int pop() throws StackException {
+    public int pop() throws StackAndQueueException {
         if (isEmpty()) {
-            throw new StackException("Stack is empty!");
+            throw new StackAndQueueException("Stack is empty!");
         }
         int removedItem = stack[top];
         top = top - 1;
@@ -44,9 +44,9 @@ public class CustomStack {
         return stack.length - 1 == top;
     }
 
-    public int peek() throws StackException {
+    public int peek() throws StackAndQueueException {
         if (isEmpty()) {
-            throw new StackException("Can't peek when Stack is empty!");
+            throw new StackAndQueueException("Can't peek when Stack is empty!");
         }
         return stack[top];
     }
@@ -59,7 +59,7 @@ public class CustomStack {
                 '}';
     }
 
-    public static void main(String[] args) throws StackException {
+    public static void main(String[] args) throws StackAndQueueException {
         CustomStack stack = new CustomStack(6);
         stack.push(34);
         stack.push(45);
