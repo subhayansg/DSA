@@ -14,6 +14,7 @@ public class LinearSearchUsingRecursion12 {
         System.out.println(list);
         ArrayList<Integer> list1 = new ArrayList<>();
         System.out.println(returnAllOccurrences2(arr3, 0, 1, list1));
+        System.out.println(returnAllOccurrences3(arr3, 0, 1));
     }
 
     private static int linearSearch(int[] arr, int i, int target) {
@@ -45,5 +46,27 @@ public class LinearSearchUsingRecursion12 {
             list.add(i);
         }
         return returnAllOccurrences2(arr, i + 1, target, list);
+    }
+
+    // Don't take list as argument, create the list in the body of the function
+    // In this case a new list will get created for each recursive call
+    private static ArrayList<Integer> returnAllOccurrences3(int[] arr, int i, int target) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (i == arr.length) {
+            return list;
+        }
+
+        // This will contain index for that specific function call
+        if (arr[i] == target) {
+            list.add(i);
+        }
+
+        // Get all the indexes that are there after the current index
+        ArrayList<Integer> indexesFromLaterCalls = returnAllOccurrences3(arr, i + 1, target);
+
+        // Now add all indexes
+        list.addAll(indexesFromLaterCalls);
+
+        return list;
     }
 }
